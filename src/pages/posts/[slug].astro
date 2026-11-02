@@ -1,0 +1,179 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export const prerender = true;
+
+const { slug } = Astro.params;
+if (!slug) throw new Error('Slug not found');
+const post = await getEntry('posts', slug);
+
+if (!post) throw new Error(`No post found for this slug: ${slug}`);
+const { Content } = await render(post);
+
+// Generate static pages
+export async function getStaticPaths() {
+  const posts = await getCollection('posts');
+  return posts.map(post => ({ params: { slug: post.id } }));
+}
+
+const fmt = (d?: Date | string) =>
+  d ? new Date(d).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }) : '';
+
+const cover = post.data.cover ?? null;
+const category = post.data.category ?? null;
+---
+
+<Layout
+  title={post.data.title}
+  description={post.data.description ?? post.data.title}
+  activePage="blog"
+>
+  <!-- HERO COVER -->
+  <div class="hero-image">
+    {cover ? <img src={cover} alt={post.data.title} /> : <div class="fill grad"></div>}
+  </div>
+
+  <article>
+    <p class="kicker">
+      {category && <span class="category">{category}</span>}
+      {post.data.pubDate && <span>{fmt(post.data.pubDate)}</span>}
+    </p>
+
+    <h1>{post.data.title}</h1>
+
+    {post.data.description && <p class="excerpt">{post.data.description}</p>}
+
+    <div class="content">
+      <Content />
+    </div>
+  </article>
+
+  <p class="back"><a href="/blog" class="btn btn-ghost">← Back to Blog</a></p>
+</Layout>
+
+<style>
+  .hero-image { height: 480px; overflow: hidden; }
+  .hero-image img, .hero-image .fill { width: 100%; height: 100%; object-fit: cover; }
+
+  article {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 60px 24px 100px;
+  }
+
+  .kicker {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    margin-bottom: 22px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+  .kicker .category {
+    color: var(--teal);
+    background: var(--mint);
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 11px;
+  }
+
+  h1 {
+    font-size: clamp(32px, 4.5vw, 56px);
+    font-weight: 500;
+    line-height: 1.08;
+    letter-spacing: -0.025em;
+    color: var(--ink);
+    margin-bottom: 28px;
+  }
+
+  .excerpt {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--muted);
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #e5e7eb;
+  }
+
+  /* Render-post content styling */
+  .content :global(p) {
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink);
+    margin-bottom: 22px;
+  }
+  .content :global(h2) {
+    font-size: clamp(22px, 2.6vw, 30px);
+    font-weight: 600;
+    line-height: 1.25;
+    letter-spacing: -0.01em;
+    margin: 48px 0 16px;
+    color: var(--ink);
+  }
+  .content :global(h3) {
+    font-size: clamp(18px, 2.2vw, 22px);
+    font-weight: 600;
+    margin: 36px 0 12px;
+    color: var(--ink);
+  }
+  .content :global(ul),
+  .content :global(ol) {
+    margin: 0 0 22px 24px;
+    font-size: 17px;
+    line-height: 1.75;
+  }
+  .content :global(li) { margin-bottom: 8px; }
+  .content :global(blockquote) {
+    margin: 32px 0;
+    padding: 8px 0 8px 24px;
+    border-left: 3px solid var(--teal);
+    font-size: 19px;
+    font-style: italic;
+    color: var(--muted);
+  }
+  .content :global(a) { color: var(--teal); text-decoration: underline; }
+  .content :global(strong) { color: var(--ink); }
+  .content :global(code) {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.9em;
+    background: #f4f7fa;
+    padding: 2px 6px;
+    border-radius: 4px;
+  }
+  .content :global(pre) {
+    background: #0f2436;
+    color: #e6eef6;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-x: auto;
+    margin-bottom: 22px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .content :global(pre code) { background: transparent; padding: 0; color: inherit; }
+
+  /* Images inside the article */
+  .content :global(img) {
+    max-width: 78%;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block;
+    margin: 40px auto 6px;
+    border-radius: 6px;
+  }
+  .content :global(figcaption),
+  .content :global([class*="caption"]) {
+    font-size: 13px;
+    color: #8a8f98;
+    text-align: center;
+    margin: 0 auto 40px;
+    max-width: 78%;
+    font-style: italic;
+  }
+
+  .back { text-align: center; padding-bottom: 80px; }
+</style>
