@@ -1,19 +1,24 @@
-# Keystatic in Astro
+# Wix Astro Templates
 
-This template shows how you can use Keystatic in an Astro site.
+Our Astro templates are still in development and subject to change.
 
-To setup:
+To use a template, follow the [Wix CLI for Headless Quick Start](https://dev.wix.com/docs/go-headless/get-started/quick-starts/wix-managed-headless/quick-start-with-the-wix-cli), and select the desired template during the setup process.
+
+## Templates not yet in the CLI's choices
+
+`templates.json` can list a template before the released CLI offers it under `--site-template`
+(the CLI ships its own list of names). Any entry here can still be created from directly:
 
 ```bash
-npm install
+npm create @wix/new@latest headless -- \
+  --template-repo https://github.com/wix/headless-templates.git \
+  --template-repo-path astro/<template-folder>
 ```
 
-To run:
+## Need help?
 
-```
-npm run dev
-```
+For documentation and support, check out:
 
-Admin UI: [http://127.0.0.1:4321/keystatic](http://127.0.0.1:4321/keystatic)
-
-Homepage: [http://localhost:4321](http://localhost:4321)
+- [Wix Headless Documentation](https://dev.wix.com/docs/go-headless)
+- [Wix SDK Documentation](https://dev.wix.com/docs/sdk)
+- [Community on Discord](https://discord.gg/n6TBrSnYTp)

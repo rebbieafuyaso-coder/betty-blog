@@ -1,0 +1,8 @@
+{
+  "projectType": "Site",
+  "appId": "e84ec612-a554-4c9f-92ff-2ace9cd5b7ab",
+  "siteId": "243a4bc3-76d3-4f85-964b-69261a9ccc4a",
+  "site": {
+    "outputDirectory": "./dist"
+  }
+}
