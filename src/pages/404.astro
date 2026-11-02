@@ -1,0 +1,49 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="Page Not Found | BettyWakiaBlog"
+  description="The page you are looking for could not be found."
+>
+  <section class="not-found gutter">
+    <div class="not-found-inner">
+      <h1>404</h1>
+      <h2>Page Not Found</h2>
+      <p>
+        The page you are looking for might have been removed, 
+        had its name changed, or is temporarily unavailable.
+      </p>
+      <div class="actions">
+        <a href="/" class="btn btn-primary">Go Home</a>
+        <a href="/blog" class="btn btn-ghost">Read the Blog</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .not-found { 
+    min-height: 70vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    text-align: center;
+    padding-block: 80px;
+  }
+  .not-found-inner { max-width: 500px; }
+  .not-found h1 { 
+    font-size: clamp(80px, 15vw, 160px); 
+    font-weight: 800; 
+    line-height: 1;
+    letter-spacing: -0.05em;
+    background: linear-gradient(135deg, var(--flag-blue), var(--flag-green), var(--flag-yellow));
+    -webkit-background-clip: text; 
+    background-clip: text; 
+    color: transparent;
+    margin-bottom: 16px;
+  }
+  .not-found h2 { font-size: 28px; font-weight: 600; margin-bottom: 16px; color: var(--ink); }
+  .not-found p { font-size: 16px; line-height: 1.7; color: var(--muted); margin-bottom: 32px; }
+  .actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+</style>

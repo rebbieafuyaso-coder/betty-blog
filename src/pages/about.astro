@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="About Betty Wakia | BettyWakiaBlog"
+  description="Learn more about Betty Wakia, a researcher, writer, and author."
+  activePage="about"
+>
+  <section class="about-hero gutter">
+    <div class="about-inner">
+      <div class="about-media grad"></div>
+      <div class="about-text">
+        <p class="kicker">ABOUT THE AUTHOR</p>
+        <h1>Betty Wakia</h1>
+        <p class="lead">
+          Researcher, writer, and author. BettyWakiaBlog is where her essays, 
+          research notes, and books come together — for readers who like their 
+          ideas considered and their writing unhurried.
+        </p>
+        <p>
+          Betty's work explores the intersections of culture, society, and human experience. 
+          Through her writing, she aims to make complex ideas accessible and to spark 
+          thoughtful conversations.
+        </p>
+        <p>
+          When she's not writing or conducting research, Betty can be found reading, 
+          exploring new places, or spending time with her community.
+        </p>
+        <a href="/contact" class="btn btn-primary">Get in Touch</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .about-hero { padding-block: 100px 120px; }
+  .about-inner { 
+    display: grid; 
+    grid-template-columns: 1fr 1.2fr; 
+    gap: 60px; 
+    align-items: center; 
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .about-media { 
+    aspect-ratio: 3 / 4; 
+    border-radius: 16px; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  }
+  .about-text .kicker { color: var(--flag-red); margin-bottom: 12px; font-weight: 700; letter-spacing: 0.1em; }
+  .about-text h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 600; margin-bottom: 24px; color: var(--ink); }
+  .about-text p { font-size: 17px; line-height: 1.8; color: var(--muted); margin-bottom: 20px; }
+  .about-text .lead { font-size: 20px; color: var(--ink); font-weight: 500; line-height: 1.6; }
+  .about-text .btn { margin-top: 16px; }
+
+  @media (max-width: 768px) {
+    .about-inner { grid-template-columns: 1fr; gap: 40px; }
+    .about-media { max-width: 400px; margin: 0 auto; aspect-ratio: 1 / 1; }
+  }
+</style>

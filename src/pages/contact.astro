@@ -1,0 +1,91 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+// Replace with Betty's actual email address
+const CONTACT_EMAIL = 'REPLACE-ME@example.com';
+---
+
+<Layout
+  title="Contact | BettyWakiaBlog"
+  description="Get in touch with Betty Wakia for inquiries, collaborations, or just to say hello."
+  activePage="contact"
+>
+  <section class="contact-section gutter">
+    <div class="contact-inner">
+      <div class="contact-text">
+        <p class="kicker">CONTACT</p>
+        <h1>Let's Connect</h1>
+        <p class="lead">
+          Have a question, a collaboration idea, or just want to say hello? 
+          Fill out the form and Betty will get back to you as soon as possible.
+        </p>
+        <div class="contact-details">
+          <p><strong>Email:</strong> <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
+          <p><strong>Location:</strong> Wuhan, China</p>
+        </div>
+      </div>
+      
+      <div class="contact-form-wrapper">
+        <form class="contact-form" action={`mailto:${CONTACT_EMAIL}`} method="POST" enctype="text/plain">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name" />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="you@example.com" />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="How can I help you?"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .contact-section { padding-block: 100px 120px; }
+  .contact-inner { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 60px; 
+    max-width: 1000px; 
+    margin: 0 auto; 
+    align-items: start;
+  }
+  .contact-text .kicker { color: var(--flag-red); margin-bottom: 12px; font-weight: 700; letter-spacing: 0.1em; }
+  .contact-text h1 { font-size: clamp(36px, 5vw, 48px); font-weight: 600; margin-bottom: 20px; color: var(--ink); }
+  .contact-text .lead { font-size: 18px; line-height: 1.7; color: var(--muted); margin-bottom: 32px; }
+  .contact-details p { font-size: 15px; margin-bottom: 12px; color: var(--ink); }
+  .contact-details a { color: var(--flag-blue); text-decoration: underline; }
+
+  .contact-form-wrapper {
+    background: #f9fafb;
+    padding: 40px;
+    border-radius: 16px;
+    border: 1px solid #e5e7eb;
+  }
+  .form-group { margin-bottom: 20px; }
+  .form-group label { display: block; font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--ink); }
+  .form-group input, .form-group textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: border-color 0.2s ease;
+    background: #fff;
+  }
+  .form-group input:focus, .form-group textarea:focus { border-color: var(--flag-blue); }
+  .contact-form .btn { width: 100%; margin-top: 8px; }
+
+  @media (max-width: 768px) {
+    .contact-inner { grid-template-columns: 1fr; gap: 40px; }
+    .contact-form-wrapper { padding: 24px; }
+  }
+</style>
