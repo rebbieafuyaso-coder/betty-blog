@@ -30,11 +30,13 @@ const category = post.data.category ?? null;
   activePage="blog"
 >
   <!-- HERO COVER -->
-  <div class="hero-image">
-    {cover ? <img src={cover} alt={post.data.title} /> : <div class="fill grad"></div>}
-  </div>
+  {cover && (
+    <div class="hero-image">
+      <img src={cover} alt={post.data.title} />
+    </div>
+  )}
 
-  <article>
+  <article class:list={{ 'no-cover': !cover }}>
     <p class="kicker">
       {category && <span class="category">{category}</span>}
       {post.data.pubDate && <span>{fmt(post.data.pubDate)}</span>}
@@ -53,14 +55,17 @@ const category = post.data.category ?? null;
 </Layout>
 
 <style>
-  .hero-image { height: 480px; overflow: hidden; }
-  .hero-image img, .hero-image .fill { width: 100%; height: 100%; object-fit: cover; }
+  .hero-image { height: 480px; overflow: hidden; background: var(--flag-black); }
+  .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
 
   article {
     max-width: 760px;
     margin: 0 auto;
     padding: 60px 24px 100px;
   }
+  
+  /* If there is no cover image, remove the top padding */
+  article.no-cover { padding-top: 100px; }
 
   .kicker {
     display: flex;
@@ -74,8 +79,8 @@ const category = post.data.category ?? null;
     color: var(--muted);
   }
   .kicker .category {
-    color: var(--teal);
-    background: var(--mint);
+    color: var(--flag-white);
+    background: var(--flag-red);
     padding: 4px 10px;
     border-radius: 999px;
     font-size: 11px;
@@ -130,12 +135,12 @@ const category = post.data.category ?? null;
   .content :global(blockquote) {
     margin: 32px 0;
     padding: 8px 0 8px 24px;
-    border-left: 3px solid var(--teal);
+    border-left: 3px solid var(--flag-red);
     font-size: 19px;
     font-style: italic;
     color: var(--muted);
   }
-  .content :global(a) { color: var(--teal); text-decoration: underline; }
+  .content :global(a) { color: var(--flag-blue); text-decoration: underline; font-weight: 500; }
   .content :global(strong) { color: var(--ink); }
   .content :global(code) {
     font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
@@ -145,8 +150,8 @@ const category = post.data.category ?? null;
     border-radius: 4px;
   }
   .content :global(pre) {
-    background: #0f2436;
-    color: #e6eef6;
+    background: var(--flag-black);
+    color: var(--flag-yellow);
     padding: 20px;
     border-radius: 10px;
     overflow-x: auto;
@@ -156,22 +161,21 @@ const category = post.data.category ?? null;
   }
   .content :global(pre code) { background: transparent; padding: 0; color: inherit; }
 
-  /* Images inside the article */
+  /* Images inside the article - UPDATED to display clearly */
   .content :global(img) {
-    max-width: 78%;
+    max-width: 100%;
     height: auto !important;
-    object-fit: contain !important;
     display: block;
-    margin: 40px auto 6px;
-    border-radius: 6px;
+    margin: 40px auto;
+    border-radius: 8px;
   }
   .content :global(figcaption),
   .content :global([class*="caption"]) {
     font-size: 13px;
     color: #8a8f98;
     text-align: center;
-    margin: 0 auto 40px;
-    max-width: 78%;
+    margin: -30px auto 40px;
+    max-width: 100%;
     font-style: italic;
   }
 

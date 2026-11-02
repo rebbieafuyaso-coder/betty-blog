@@ -102,15 +102,26 @@ const BRAND_NAME = 'BettyWakiaBlog';
 
 <style is:global>
   :root {
-    --dark: #0f2436;
-    --ink: #0f2436;
-    --muted: #5b7080;
-    --blue-deep: #0b3d6b;
-    --blue: #1b6ca8;
-    --teal: #17a2a8;
-    --green: #2fbf8f;
-    --mint: #d9f5ee;
+    /* Flag Colors Extracted */
+    --flag-yellow: #fcd116;
+    --flag-green: #009e49;
+    --flag-red: #ce1126;
+    --flag-blue: #0072ce;
+    --flag-black: #000000;
+    --flag-white: #ffffff;
+
+    /* Theme Mappings */
+    --dark: var(--flag-black);
+    --ink: #111827; 
+    --muted: #4b5563;
+    --blue-deep: #003a6b; /* Darker blue for readable footer */
+    --blue: var(--flag-blue);
+    --teal: var(--flag-blue); /* Using flag blue for links/highlights */
+    --green: var(--flag-green);
+    --mint: #e0f2fe; 
+    --yellow: var(--flag-yellow);
   }
+  
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   html, body {
@@ -143,24 +154,28 @@ const BRAND_NAME = 'BettyWakiaBlog';
 
   /* Utilities used by the homepage */
   .gutter { padding-inline: max(24px, calc((100vw - 1280px) / 2 + 24px)); }
+  
+  /* Updated Gradients using Flag Colors */
   .grad {
-    background: linear-gradient(135deg, var(--blue-deep) 0%, var(--blue) 38%, var(--teal) 68%, var(--green) 100%);
+    background: linear-gradient(135deg, var(--flag-blue) 0%, var(--flag-green) 50%, var(--flag-yellow) 100%);
     color: #fff;
   }
-  .g0 { background: linear-gradient(140deg, #1b6ca8, #17a2a8); }
-  .g1 { background: linear-gradient(140deg, #17a2a8, #2fbf8f); }
-  .g2 { background: linear-gradient(140deg, #0b3d6b, #1b6ca8); }
-  .g3 { background: linear-gradient(140deg, #2fbf8f, #d9f5ee); }
+  .g0 { background: var(--flag-yellow); color: var(--flag-black); }
+  .g1 { background: var(--flag-green); color: var(--flag-white); }
+  .g2 { background: var(--flag-blue); color: var(--flag-white); }
+  .g3 { background: var(--flag-red); color: var(--flag-white); }
+  
   .ph { border-radius: 6px; overflow: hidden; }
-  .ph img { width: 100%; height: auto; display: block; }
+  .ph img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  
   .kicker { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; opacity: 0.85; }
   .btn { display: inline-block; border-radius: 24px; padding: 13px 30px; font-size: 14px; font-weight: 600; }
   .empty { text-align: center; padding: 80px 0; opacity: 0.4; font-size: 18px; }
 
   /* Promo banner */
   .banner {
-    background: linear-gradient(135deg, var(--blue-deep), var(--teal));
-    color: #fff;
+    background: var(--flag-black);
+    color: var(--flag-yellow);
     text-align: center;
     padding: 12px 24px;
     font-size: 12px;
@@ -169,7 +184,7 @@ const BRAND_NAME = 'BettyWakiaBlog';
   }
 
   /* Header + nav */
-  .site-header { background: #fff; border-bottom: 1px solid #e5e7eb; position: sticky; top: 0; z-index: 100; }
+  .site-header { background: #fff; border-bottom: 2px solid var(--flag-black); position: sticky; top: 0; z-index: 100; }
   .header-inner {
     max-width: 1280px; margin: 0 auto; padding: 0 24px; height: 72px;
     display: flex; align-items: center; gap: 24px; position: relative;
@@ -178,7 +193,7 @@ const BRAND_NAME = 'BettyWakiaBlog';
   .brand-mark { width: 36px; height: 36px; border-radius: 50%; }
   .site-nav { display: flex; gap: 28px; flex: 1; justify-content: flex-end; }
   .site-nav a { font-size: 14px; opacity: 0.8; }
-  .site-nav a.active { opacity: 1; font-weight: 600; color: var(--teal); }
+  .site-nav a.active { opacity: 1; font-weight: 700; color: var(--flag-red); }
 
   /* Hamburger */
   .nav-toggle-input { display: none; }
@@ -193,24 +208,24 @@ const BRAND_NAME = 'BettyWakiaBlog';
   .nav-toggle-input:checked ~ .nav-toggle-label span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
   /* Footer */
-  footer { background: var(--blue-deep); color: #fff; padding-top: 60px; }
-  .footer-head { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: #8fc6e8; margin-bottom: 16px; }
+  footer { background: var(--flag-black); color: #fff; padding-top: 60px; border-top: 4px solid var(--flag-green); }
+  .footer-head { font-size: 12px; font-weight: 600; letter-spacing: 0.1em; color: var(--flag-yellow); margin-bottom: 16px; }
   .footer-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; padding-bottom: 60px; }
-  .footer-grid a, .footer-grid p:not(.footer-head) { display: block; font-size: 14px; margin-bottom: 10px; color: #d1e6f5; }
+  .footer-grid a, .footer-grid p:not(.footer-head) { display: block; font-size: 14px; margin-bottom: 10px; color: #d1d5db; }
   .socials { display: flex; gap: 16px; }
   .socials a {
-    width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid #4b7a9e;
+    width: 36px; height: 36px; border-radius: 50%; border: 1.5px solid #4b5563;
     display: flex; align-items: center; justify-content: center;
     transition: background 0.15s ease, transform 0.15s ease;
   }
-  .socials a:hover { background: var(--teal); border-color: var(--teal); transform: translateY(-1px); }
-  .footer-bottom { border-top: 1px solid #1e4a6e; padding: 48px 0 32px; text-align: center; }
+  .socials a:hover { background: var(--flag-red); border-color: var(--flag-red); transform: translateY(-1px); }
+  .footer-bottom { border-top: 1px solid #374151; padding: 48px 0 32px; text-align: center; }
   .footer-logo {
     font-size: clamp(60px, 11vw, 150px); font-weight: 800; line-height: 0.9; letter-spacing: -0.03em;
-    background: linear-gradient(135deg, #8fc6e8, var(--green));
+    background: linear-gradient(135deg, var(--flag-yellow), var(--flag-green), var(--flag-red));
     -webkit-background-clip: text; background-clip: text; color: transparent;
   }
-  .copyright { margin: 40px 0 32px; font-size: 13px; color: #7fa8c8; }
+  .copyright { margin: 40px 0 32px; font-size: 13px; color: #9ca3af; }
 
   /* Responsive */
   @media (max-width: 900px) {
@@ -221,7 +236,7 @@ const BRAND_NAME = 'BettyWakiaBlog';
     .site-nav {
       display: none; position: absolute; top: 100%; left: 0; right: 0;
       flex-direction: column; gap: 4px; background: #fff;
-      border-bottom: 1px solid #e5e7eb; padding: 16px 24px;
+      border-bottom: 2px solid var(--flag-black); padding: 16px 24px;
       box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
     }
     .site-nav a { padding: 10px 0; width: 100%; }
