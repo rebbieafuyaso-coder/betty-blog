@@ -4,23 +4,37 @@ import '../styles.css'
 export interface Props {
   title: string;
   description?: string;
+  image?: string; // <-- Added for dynamic social sharing images
   activePage?: 'home' | 'blog' | 'about' | 'categories' | 'contact';
 }
 
-const { title, description = 'BettyWakiaBlog — stories, ideas, and books.', activePage } = Astro.props;
+const { 
+  title, 
+  description = 'BettyWakiaBlog — stories, ideas, and books.', 
+  image, // <-- Destructured
+  activePage 
+} = Astro.props;
 
 const nav = [
   { href: '/', label: 'Home', id: 'home' },
   { href: '/blog', label: 'Blog', id: 'blog' },
   { href: '/categories', label: 'Categories', id: 'categories' },
   { href: '/about', label: 'About', id: 'about' },
-  { href: '/contact', label: 'Contact', id: 'contact' }, // <-- ADDED CONTACT
+  { href: '/contact', label: 'Contact', id: 'contact' },
 ];
 
 // TODO: replace with Betty's real profile URLs
 const LINKEDIN_URL = 'https://www.linkedin.com/in/REPLACE-ME';
 const FACEBOOK_URL = 'https://www.facebook.com/REPLACE-ME';
 const BRAND_NAME = 'BettyWakiaBlog';
+
+// Domain & Social Image Logic
+const DOMAIN = 'https://bettywakiablog.com';
+const defaultImage = `${DOMAIN}/og-image.jpg`; 
+// Create absolute URL for the image if one is passed
+const metaImage = image ? new URL(image, DOMAIN).toString() : defaultImage;
+// Create absolute canonical URL
+const canonicalURL = new URL(Astro.url.pathname, DOMAIN);
 ---
 
 <!DOCTYPE html>
@@ -32,32 +46,25 @@ const BRAND_NAME = 'BettyWakiaBlog';
     <!-- Primary SEO -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <link rel="canonical" href={Astro.url} />
+    <link rel="canonical" href={canonicalURL} />
     <meta name="generator" content={Astro.generator} />
 
     <!-- Open Graph (Facebook, LinkedIn, etc.) -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={Astro.url} />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
-    <meta property="og:site_name" content="BettyWakiaBlog" />
-    <!-- Replace with a default social sharing image -->
-    <meta property="og:image" content="https://yourdomain.com/og-image.jpg" />
+    <meta property="og:image" content={metaImage} />
+    <meta property="og:site_name" content={BRAND_NAME} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
-    <meta name="twitter:image" content="https://yourdomain.com/og-image.jpg" />
+    <meta name="twitter:image" content={metaImage} />
 
     <!-- Favicon & Fonts -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Text:ital,wght@0,400..800;1,400..800&display=swap"
-      rel="stylesheet"
-    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -128,7 +135,7 @@ const BRAND_NAME = 'BettyWakiaBlog';
       "@context": "https://schema.org",
       "@type": "WebSite",
       "name": "BettyWakiaBlog",
-      "url": "https://yourdomain.com"
+      "url": "https://bettywakiablog.com"
     }
   </script>
 </html>

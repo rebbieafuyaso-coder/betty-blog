@@ -1,8 +1,10 @@
 import { t as __exportAll } from "./chunks/rolldown-runtime_D8jQpDG7.mjs";
-import { C as LocalsReassigned, F as NoMatchingStaticPathFound, G as SessionStorageSaveError, H as ResponseSentError, K as StaticClientAddressNotAvailable, L as PageNumberParamNotFound, M as NoManifestAvailable, R as PrerenderClientAddressNotAvailable, S as LocalsNotAnObject, T as MiddlewareNotAResponse, U as RewriteWithBodyUsed, V as ReservedSlotName, W as SessionStorageInitError, X as i18nNoLocaleFoundInPath, a as AstroResponseHeadersReassigned, f as ForbiddenRewrite, h as GetStaticPathsRequired, i as ActionsReturnedInvalidDataError, m as GetStaticPathsInvalidRouteParam, n as isAstroError, o as CacheNotEnabled, p as GetStaticPathsExpectedParams, r as ActionNotFoundError, s as ClientAddressNotAvailable, t as AstroError, v as InvalidGetStaticPathsEntry, w as MiddlewareNoDataOrNextCalled, y as InvalidGetStaticPathsReturn, z as PrerenderDynamicEndpointPathCollide } from "./chunks/errors_-0IbpL4u.mjs";
-import { A as decryptString, C as STATUS_CODE_PAGES, D as originPathnameSymbol, E as nodeRequestAbortControllerCleanupSymbol, O as responseSentSymbol$1, S as REROUTABLE_STATUS_CODES, T as fetchStateSymbol, _ as isRoute500, a as createSlotValueFromString, b as DEFAULT_404_COMPONENT, c as renderTemplate, d as pushDirective, f as isAstroComponentFactory, g as isRoute404, h as isRoute3xx, i as chunkToString, j as generateCspDigest, k as decodeKey, l as isRenderInstruction, m as renderEndpoint, n as renderJSX, o as renderSlotToString, p as markHTMLString, r as renderComponent, s as isRenderTemplateResult, t as renderPage, u as normalizeCspResourceEntry, v as ASTRO_ERROR_HEADER, w as clientAddressSymbol, x as REDIRECT_STATUS_CODES, y as ASTRO_GENERATOR } from "./chunks/server_hqAJiM_A.mjs";
-import { _ as slash$1, a as collapseDuplicateSlashes, c as hasFileExtension, f as joinPaths, g as removeTrailingForwardSlash, i as collapseDuplicateLeadingSlashes, l as isInternalPath, m as removeLeadingForwardSlash, n as matchPattern, o as collapseDuplicateTrailingSlashes, p as prependForwardSlash$1, r as appendForwardSlash, s as fileExtension, v as stripRequestBase, y as trimSlashes } from "./chunks/remote_CJWkz4og.mjs";
+import { B as PageNumberParamNotFound, D as MiddlewareNoDataOrNextCalled, E as LocalsReassigned, F as NoManifestAvailable, G as ReservedSlotName, H as PrerenderDynamicEndpointPathCollide, J as SessionStorageInitError, K as ResponseSentError, O as MiddlewareNotAResponse, R as NoMatchingStaticPathFound, S as InvalidGetStaticPathsReturn, T as LocalsNotAnObject, V as PrerenderClientAddressNotAvailable, X as StaticClientAddressNotAvailable, Y as SessionStorageSaveError, _ as GetStaticPathsInvalidRouteParam, a as AstroResponseHeadersReassigned, g as GetStaticPathsExpectedParams, i as ActionsReturnedInvalidDataError, m as ForbiddenRewrite, n as isAstroError, o as CacheNotEnabled, q as RewriteWithBodyUsed, r as ActionNotFoundError, s as ClientAddressNotAvailable, t as AstroError, tt as i18nNoLocaleFoundInPath, v as GetStaticPathsRequired, x as InvalidGetStaticPathsEntry } from "./chunks/errors_1cSqqaaQ.mjs";
+import { A as REDIRECT_STATUS_CODES, B as generateCspDigest, C as renderEndpoint, D as ASTRO_ERROR_HEADER, E as isRoute500, F as nodeRequestAbortControllerCleanupSymbol, I as originPathnameSymbol, L as responseSentSymbol$1, M as STATUS_CODE_PAGES, N as clientAddressSymbol, O as ASTRO_GENERATOR, P as fetchStateSymbol, R as decodeKey, T as isRoute404, _ as normalizeCspResourceEntry, a as renderJSX, b as isAstroComponentFactory, c as createSlotValueFromString, d as isRenderTemplateResult, f as renderTemplate, g as isRenderInstruction, i as renderPage, j as REROUTABLE_STATUS_CODES, k as DEFAULT_404_COMPONENT, o as renderComponent, s as chunkToString, u as renderSlotToString, v as pushDirective, w as isRoute3xx, x as markHTMLString, z as decryptString } from "./chunks/server_DBrRtYag.mjs";
+import { _ as stripRequestBase, a as fileExtension, d as prependForwardSlash$1, g as slash$1, h as removeTrailingForwardSlash, i as collapseDuplicateTrailingSlashes, n as collapseDuplicateLeadingSlashes, o as hasFileExtension, p as removeLeadingForwardSlash, r as collapseDuplicateSlashes, s as isInternalPath, t as appendForwardSlash, u as joinPaths, v as trimSlashes } from "./chunks/path_CFJuBWeb.mjs";
+import { t as getAssetsPrefix } from "./chunks/getAssetsPrefix_Bl-SD0g7.mjs";
 import { n as AstroIntegrationLogger, r as astroToRuntimeLogger, t as createConsoleLogger } from "./chunks/console_ClfCadOL.mjs";
+import { n as matchPattern } from "./chunks/remote_Z-Z8LuKO.mjs";
 import { n as setGetEnv } from "./chunks/runtime_CbHAOOc6.mjs";
 import React, { createElement, memo } from "react";
 import ReactDOM from "react-dom/server";
@@ -379,6 +381,56 @@ var renderers = [Object.assign({
 		"scripts": [],
 		"styles": [],
 		"routeData": {
+			"route": "/404",
+			"isIndex": false,
+			"type": "page",
+			"pattern": "^\\/404\\/?$",
+			"segments": [[{
+				"content": "404",
+				"dynamic": false,
+				"spread": false
+			}]],
+			"params": [],
+			"component": "src/pages/404.astro",
+			"pathname": "/404",
+			"prerender": false,
+			"fallbackRoutes": [],
+			"distURL": [],
+			"origin": "project",
+			"_meta": { "trailingSlash": "ignore" }
+		}
+	},
+	{
+		"file": "",
+		"links": [],
+		"scripts": [],
+		"styles": [],
+		"routeData": {
+			"route": "/about",
+			"isIndex": false,
+			"type": "page",
+			"pattern": "^\\/about\\/?$",
+			"segments": [[{
+				"content": "about",
+				"dynamic": false,
+				"spread": false
+			}]],
+			"params": [],
+			"component": "src/pages/about.astro",
+			"pathname": "/about",
+			"prerender": false,
+			"fallbackRoutes": [],
+			"distURL": [],
+			"origin": "project",
+			"_meta": { "trailingSlash": "ignore" }
+		}
+	},
+	{
+		"file": "",
+		"links": [],
+		"scripts": [],
+		"styles": [],
+		"routeData": {
 			"type": "endpoint",
 			"isIndex": false,
 			"route": "/api/keystatic/[...params]",
@@ -415,6 +467,109 @@ var renderers = [Object.assign({
 		"scripts": [],
 		"styles": [],
 		"routeData": {
+			"route": "/books/[slug]",
+			"isIndex": false,
+			"type": "page",
+			"pattern": "^\\/books\\/([^/]+?)\\/?$",
+			"segments": [[{
+				"content": "books",
+				"dynamic": false,
+				"spread": false
+			}], [{
+				"content": "slug",
+				"dynamic": true,
+				"spread": false
+			}]],
+			"params": ["slug"],
+			"component": "src/pages/books/[slug].astro",
+			"prerender": false,
+			"fallbackRoutes": [],
+			"distURL": [],
+			"origin": "project",
+			"_meta": { "trailingSlash": "ignore" }
+		}
+	},
+	{
+		"file": "",
+		"links": [],
+		"scripts": [],
+		"styles": [],
+		"routeData": {
+			"route": "/books",
+			"isIndex": true,
+			"type": "page",
+			"pattern": "^\\/books\\/?$",
+			"segments": [[{
+				"content": "books",
+				"dynamic": false,
+				"spread": false
+			}]],
+			"params": [],
+			"component": "src/pages/books/index.astro",
+			"pathname": "/books",
+			"prerender": false,
+			"fallbackRoutes": [],
+			"distURL": [],
+			"origin": "project",
+			"_meta": { "trailingSlash": "ignore" }
+		}
+	},
+	{
+		"file": "",
+		"links": [],
+		"scripts": [],
+		"styles": [],
+		"routeData": {
+			"route": "/categories",
+			"isIndex": true,
+			"type": "page",
+			"pattern": "^\\/categories\\/?$",
+			"segments": [[{
+				"content": "categories",
+				"dynamic": false,
+				"spread": false
+			}]],
+			"params": [],
+			"component": "src/pages/categories/index.astro",
+			"pathname": "/categories",
+			"prerender": false,
+			"fallbackRoutes": [],
+			"distURL": [],
+			"origin": "project",
+			"_meta": { "trailingSlash": "ignore" }
+		}
+	},
+	{
+		"file": "",
+		"links": [],
+		"scripts": [],
+		"styles": [],
+		"routeData": {
+			"route": "/contact",
+			"isIndex": false,
+			"type": "page",
+			"pattern": "^\\/contact\\/?$",
+			"segments": [[{
+				"content": "contact",
+				"dynamic": false,
+				"spread": false
+			}]],
+			"params": [],
+			"component": "src/pages/contact.astro",
+			"pathname": "/contact",
+			"prerender": false,
+			"fallbackRoutes": [],
+			"distURL": [],
+			"origin": "project",
+			"_meta": { "trailingSlash": "ignore" }
+		}
+	},
+	{
+		"file": "",
+		"links": [],
+		"scripts": [],
+		"styles": [],
+		"routeData": {
 			"type": "page",
 			"isIndex": false,
 			"route": "/keystatic/[...params]",
@@ -436,19 +591,88 @@ var renderers = [Object.assign({
 			"origin": "external",
 			"_meta": { "trailingSlash": "ignore" }
 		}
+	},
+	{
+		"file": "",
+		"links": [],
+		"scripts": [],
+		"styles": [],
+		"routeData": {
+			"route": "/research/[slug]",
+			"isIndex": false,
+			"type": "page",
+			"pattern": "^\\/research\\/([^/]+?)\\/?$",
+			"segments": [[{
+				"content": "research",
+				"dynamic": false,
+				"spread": false
+			}], [{
+				"content": "slug",
+				"dynamic": true,
+				"spread": false
+			}]],
+			"params": ["slug"],
+			"component": "src/pages/research/[slug].astro",
+			"prerender": false,
+			"fallbackRoutes": [],
+			"distURL": [],
+			"origin": "project",
+			"_meta": { "trailingSlash": "ignore" }
+		}
+	},
+	{
+		"file": "",
+		"links": [],
+		"scripts": [],
+		"styles": [],
+		"routeData": {
+			"route": "/research",
+			"isIndex": true,
+			"type": "page",
+			"pattern": "^\\/research\\/?$",
+			"segments": [[{
+				"content": "research",
+				"dynamic": false,
+				"spread": false
+			}]],
+			"params": [],
+			"component": "src/pages/research/index.astro",
+			"pathname": "/research",
+			"prerender": false,
+			"fallbackRoutes": [],
+			"distURL": [],
+			"origin": "project",
+			"_meta": { "trailingSlash": "ignore" }
+		}
 	}
 ].map(deserializeRouteInfo);
 // \0virtual:astro:pages
-var _page0 = () => import("./chunks/node_CLWSiIo-.mjs").then((n) => n.t);
-var _page1 = () => import("./chunks/keystatic-api_B9WJufAD.mjs");
-var _page2 = () => import("./chunks/keystatic-astro-page_DBkH6w5n.mjs");
+var _page0 = () => import("./chunks/node_B8viEXAp.mjs");
+var _page1 = () => import("./chunks/404_Gro7TOh7.mjs");
+var _page2 = () => import("./chunks/about_BeegldHr.mjs");
+var _page3 = () => import("./chunks/keystatic-api_DcNZbPF-.mjs");
+var _page4 = () => import("./chunks/_slug__Ca9u2piu.mjs");
+var _page5 = () => import("./chunks/index_BqmcKPqg.mjs");
+var _page6 = () => import("./chunks/index_CitKdrvx.mjs");
+var _page7 = () => import("./chunks/contact_D8sUj07C.mjs");
+var _page8 = () => import("./chunks/keystatic-astro-page_DV9ZcnKc.mjs");
+var _page9 = () => import("./chunks/_slug__B-bTM33I.mjs");
+var _page10 = () => import("./chunks/index_C-F_2TFo.mjs");
 var pageMap = /* @__PURE__ */ new Map([
 	["node_modules/astro/dist/assets/endpoint/node.js", _page0],
-	["node_modules/@keystatic/astro/internal/keystatic-api.js", _page1],
-	["node_modules/@keystatic/astro/internal/keystatic-astro-page.astro", _page2]
+	["src/pages/404.astro", _page1],
+	["src/pages/about.astro", _page2],
+	["node_modules/@keystatic/astro/internal/keystatic-api.js", _page3],
+	["src/pages/books/[slug].astro", _page4],
+	["src/pages/books/index.astro", _page5],
+	["src/pages/categories/index.astro", _page6],
+	["src/pages/contact.astro", _page7],
+	["node_modules/@keystatic/astro/internal/keystatic-astro-page.astro", _page8],
+	["src/pages/research/[slug].astro", _page9],
+	["src/pages/research/index.astro", _page10]
 ]);
 // \0virtual:astro:manifest
-var _manifest = deserializeManifest({"rootDir":"file:///C:/projects/BettyWakiaBlog/bettywakiablog/","cacheDir":"file:///C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/.astro/","outDir":"file:///C:/projects/BettyWakiaBlog/bettywakiablog/dist/","srcDir":"file:///C:/projects/BettyWakiaBlog/bettywakiablog/src/","publicDir":"file:///C:/projects/BettyWakiaBlog/bettywakiablog/public/","buildClientDir":"file:///C:/projects/BettyWakiaBlog/bettywakiablog/dist/client/","buildServerDir":"file:///C:/projects/BettyWakiaBlog/bettywakiablog/dist/server/","adapterName":"@astrojs/node","assetsDir":"_astro","routes":[{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"type":"page","component":"_server-islands.astro","params":["name"],"segments":[[{"content":"_server-islands","dynamic":false,"spread":false}],[{"content":"name","dynamic":true,"spread":false}]],"pattern":"^\\/_server-islands\\/([^/]+?)\\/?$","prerender":false,"isIndex":false,"fallbackRoutes":[],"route":"/_server-islands/[name]","origin":"internal","distURL":[],"_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/_image","component":"node_modules/astro/dist/assets/endpoint/node.js","params":[],"pathname":"/_image","pattern":"^\\/_image\\/?$","segments":[[{"content":"_image","dynamic":false,"spread":false}]],"type":"endpoint","prerender":false,"fallbackRoutes":[],"distURL":[],"isIndex":false,"origin":"internal","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/404","isIndex":false,"type":"page","pattern":"^\\/404\\/?$","segments":[[{"content":"404","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/404.astro","pathname":"/404","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/about","isIndex":false,"type":"page","pattern":"^\\/about\\/?$","segments":[[{"content":"about","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/about.astro","pathname":"/about","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"type":"endpoint","isIndex":false,"route":"/api/keystatic/[...params]","pattern":"^\\/api\\/keystatic(?:\\/(.*?))?\\/?$","segments":[[{"content":"api","dynamic":false,"spread":false}],[{"content":"keystatic","dynamic":false,"spread":false}],[{"content":"...params","dynamic":true,"spread":true}]],"params":["...params"],"component":"node_modules/@keystatic/astro/internal/keystatic-api.js","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"external","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/contact","isIndex":false,"type":"page","pattern":"^\\/contact\\/?$","segments":[[{"content":"contact","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/contact.astro","pathname":"/contact","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"type":"page","isIndex":false,"route":"/keystatic/[...params]","pattern":"^\\/keystatic(?:\\/(.*?))?\\/?$","segments":[[{"content":"keystatic","dynamic":false,"spread":false}],[{"content":"...params","dynamic":true,"spread":true}]],"params":["...params"],"component":"node_modules/@keystatic/astro/internal/keystatic-astro-page.astro","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"external","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/posts/[slug]","isIndex":false,"type":"page","pattern":"^\\/posts\\/([^/]+?)\\/?$","segments":[[{"content":"posts","dynamic":false,"spread":false}],[{"content":"slug","dynamic":true,"spread":false}]],"params":["slug"],"component":"src/pages/posts/[slug].astro","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/","isIndex":true,"type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}}],"serverLike":true,"middlewareMode":"classic","base":"/","trailingSlash":"ignore","compressHTML":"jsx","componentMetadata":[["C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/404.astro",{"propagation":"none","containsHead":true}],["C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/about.astro",{"propagation":"none","containsHead":true}],["C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/contact.astro",{"propagation":"none","containsHead":true}],["C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/index.astro",{"propagation":"in-tree","containsHead":true}],["C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/posts/[slug].astro",{"propagation":"in-tree","containsHead":true}],["C:/projects/BettyWakiaBlog/bettywakiablog/src/content/posts/building-betty-wakia-s-digital-home-a-blog-by-rebbie-afuyaso-at-wuhan-university-of-technology.mdoc?astroPropagatedAssets",{"propagation":"in-tree","containsHead":false}],["C:\\projects\\BettyWakiaBlog\\bettywakiablog\\.astro\\content-modules.mjs",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/content/runtime.js",{"propagation":"in-tree","containsHead":false}],["\u0000astro:content",{"propagation":"in-tree","containsHead":false}],["\u0000virtual:astro:page:src/pages/index@_@astro",{"propagation":"in-tree","containsHead":false}],["\u0000virtual:astro:pages",{"propagation":"in-tree","containsHead":false}],["\u0000virtual:astro:manifest",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/core/manifest/ambient.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/core/fetch/default-handler.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/core/app/base.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/core/app/app.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/core/app/entrypoints/index.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/core/build/app.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/entrypoints/prerender.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/core/middleware/index.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/core/middleware/astro-middleware.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/core/errors/default-handler.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/core/errors/build-handler.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/core/errors/handler.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/core/errors/dev-handler.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/core/errors/not-found.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/core/routing/handler.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/core/pages/handler.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/core/rewrites/handler.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/core/fetch/fetch-state.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/actions/runtime/server.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/actions/handler.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/actions/utils.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/core/routing/redirect-page.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/i18n/index.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/i18n/fallback.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/core/i18n/handler.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/i18n/middleware.js",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/i18n/utils.js",{"propagation":"in-tree","containsHead":false}],["\u0000virtual:astro:page:src/pages/posts/[slug]@_@astro",{"propagation":"in-tree","containsHead":false}],["C:/projects/BettyWakiaBlog/bettywakiablog/src/content/posts/first-post.mdoc?astroPropagatedAssets",{"propagation":"in-tree","containsHead":false}]],"renderers":[],"clientDirectives":[["idle","(function(){let e=(e,t)=>{let n=async()=>{await(await e())()},r=typeof t.value==`object`?t.value:void 0,i={timeout:r==null?void 0:r.timeout};`requestIdleCallback`in window?window.requestIdleCallback(n,i):setTimeout(n,i.timeout||200)};(self.Astro||(self.Astro={})).idle=e,window.dispatchEvent(new Event(`astro:idle`))})();"],["load","(function(){let e=async e=>{await(await e())()};(self.Astro||(self.Astro={})).load=e,window.dispatchEvent(new Event(`astro:load`))})();"],["media","(function(){let e=(e,t)=>{let n=async()=>{await(await e())()};if(t.value){let e=matchMedia(t.value);e.matches?n():e.addEventListener(`change`,n,{once:!0})}};(self.Astro||(self.Astro={})).media=e,window.dispatchEvent(new Event(`astro:media`))})();"],["only","(function(){let e=async e=>{await(await e())()};(self.Astro||(self.Astro={})).only=e,window.dispatchEvent(new Event(`astro:only`))})();"],["visible","(function(){let e=(e,t,n)=>{let r=async()=>{await(await e())()},i=typeof t.value==`object`?t.value:void 0,a={rootMargin:i==null?void 0:i.rootMargin},o=new IntersectionObserver(e=>{for(let t of e)if(t.isIntersecting){o.disconnect(),r();break}},a);for(let e of n.children)o.observe(e)};(self.Astro||(self.Astro={})).visible=e,window.dispatchEvent(new Event(`astro:visible`))})();"]],"entryModules":{"\u0000noop-middleware":"virtual_astro_middleware.mjs","\u0000virtual:astro:server-island-manifest":"chunks/_virtual_astro_server-island-manifest_BhTW5IeR.mjs","\u0000virtual:astro:session-driver":"chunks/_virtual_astro_session-driver_HzKX7Wn1.mjs","\u0000virtual:astro:actions/noop-entrypoint":"chunks/noop-entrypoint_CxXy0p4B.mjs","C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/assets/services/sharp.js":"chunks/sharp_C78rJbxc.mjs","C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/@astrojs/react/dist/vnode-children.js":"chunks/vnode-children_C4hxNQje.mjs","@astrojs/node/server.js":"entry.mjs","\u0000virtual:astro:page:node_modules/@keystatic/astro/internal/keystatic-api@_@js":"chunks/keystatic-api_B9WJufAD.mjs","\u0000virtual:astro:page:node_modules/@keystatic/astro/internal/keystatic-astro-page@_@astro":"chunks/keystatic-astro-page_DBkH6w5n.mjs","\u0000virtual:astro:page:node_modules/astro/dist/assets/endpoint/node@_@js":"chunks/node_CLWSiIo-.mjs","@astrojs/react/client.js":"_astro/client.Dz3MrANJ.js","C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/index.astro?astro&type=script&index=0&lang.ts":"_astro/index.astro_astro_type_script_index_0_lang.DhwtPk1r.js","C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/@keystatic/astro/internal/keystatic-page.js":"_astro/keystatic-page.C9u3fC15.js","astro:scripts/before-hydration.js":""},"inlinedScripts":[["C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/index.astro?astro&type=script&index=0&lang.ts","document.addEventListener(`DOMContentLoaded`,()=>{let e=document.getElementById(`search-input`),t=document.getElementById(`post-grid`),n=document.getElementById(`no-results`);if(!e||!t)return;let r=Array.from(t.querySelectorAll(`.post-card`));e.addEventListener(`input`,e=>{let t=e.target.value.toLowerCase().trim(),i=0;r.forEach(e=>{let n=e.dataset.title||``,r=e.dataset.desc||``,a=e.dataset.cat||``;n.includes(t)||r.includes(t)||a.includes(t)?(e.style.display=`block`,i++):e.style.display=`none`}),n&&(n.style.display=i===0?`block`:`none`)})});"]],"assets":["/404.html","/_astro/4a1a094c-6f5d-4905-9086-5136846f0fa1.Cq4P3pSK.webp","/_astro/Layout.DaqdDlO4.css","/_astro/_cgi-bin_mmwebwx-bin_webwxgetmsgimg___MsgID_4679101115888104237_skey_@crypt_77e683b3_2485f8683f85f02a9160acde33e0eaf5_mmweb_appid_wx_webfilehelper.1b3D6P33.jpg","/_astro/client.Dz3MrANJ.js","/_astro/keystatic-page.C9u3fC15.js","/_astro/react-dom.DVHG2hom.js","/about/index.html","/contact/index.html","/favicon.svg","/index.html"],"buildFormat":"directory","checkOrigin":true,"actionBodySizeLimit":1048576,"serverIslandBodySizeLimit":1048576,"allowedDomains":[],"key":"D5gTVvu+CtnBfiQeXEgkc1KZ9ofpUdFgojCpi5xMXwg=","sessionConfig":{"driver":"unstorage/drivers/fs-lite","options":{"base":"C:\\projects\\BettyWakiaBlog\\bettywakiablog\\node_modules\\.astro\\sessions"}},"image":{},"devToolbar":{"enabled":false,"debugInfoOutput":""},"logLevel":"info","shouldInjectCspMetaTags":false});
+var _manifest = deserializeManifest({"rootDir":"file:///C:/projects/BettyWakiaBlog/bettywakiablog/","cacheDir":"file:///C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/.astro/","outDir":"file:///C:/projects/BettyWakiaBlog/bettywakiablog/dist/","srcDir":"file:///C:/projects/BettyWakiaBlog/bettywakiablog/src/","publicDir":"file:///C:/projects/BettyWakiaBlog/bettywakiablog/public/","buildClientDir":"file:///C:/projects/BettyWakiaBlog/bettywakiablog/dist/client/","buildServerDir":"file:///C:/projects/BettyWakiaBlog/bettywakiablog/dist/server/","adapterName":"@astrojs/node","assetsDir":"_astro","routes":[{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"type":"page","component":"_server-islands.astro","params":["name"],"segments":[[{"content":"_server-islands","dynamic":false,"spread":false}],[{"content":"name","dynamic":true,"spread":false}]],"pattern":"^\\/_server-islands\\/([^/]+?)\\/?$","prerender":false,"isIndex":false,"fallbackRoutes":[],"route":"/_server-islands/[name]","origin":"internal","distURL":[],"_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/_image","component":"node_modules/astro/dist/assets/endpoint/node.js","params":[],"pathname":"/_image","pattern":"^\\/_image\\/?$","segments":[[{"content":"_image","dynamic":false,"spread":false}]],"type":"endpoint","prerender":false,"fallbackRoutes":[],"distURL":[],"isIndex":false,"origin":"internal","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/Layout.DaqdDlO4.css"},{"type":"inline","content":".not-found[data-astro-cid-ibpinaeu]{text-align:center;justify-content:center;align-items:center;min-height:70vh;padding-block:80px;display:flex}.not-found-inner[data-astro-cid-ibpinaeu]{max-width:500px}.not-found[data-astro-cid-ibpinaeu] h1[data-astro-cid-ibpinaeu]{letter-spacing:-.05em;background:linear-gradient(135deg, var(--flag-blue), var(--flag-green), var(--flag-yellow));color:#0000;-webkit-background-clip:text;background-clip:text;margin-bottom:16px;font-size:clamp(80px,15vw,160px);font-weight:800;line-height:1}.not-found[data-astro-cid-ibpinaeu] h2[data-astro-cid-ibpinaeu]{color:var(--ink);margin-bottom:16px;font-size:28px;font-weight:600}.not-found[data-astro-cid-ibpinaeu] p[data-astro-cid-ibpinaeu]{color:var(--muted);margin-bottom:32px;font-size:16px;line-height:1.7}.actions[data-astro-cid-ibpinaeu]{flex-wrap:wrap;justify-content:center;gap:12px;display:flex}\n"}],"routeData":{"route":"/404","isIndex":false,"type":"page","pattern":"^\\/404\\/?$","segments":[[{"content":"404","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/404.astro","pathname":"/404","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/Layout.DaqdDlO4.css"},{"type":"inline","content":".about-hero[data-astro-cid-ta2fbyqs]{padding-block:100px 120px}.about-inner[data-astro-cid-ta2fbyqs]{grid-template-columns:1fr 1.2fr;align-items:center;gap:60px;max-width:1100px;margin:0 auto;display:grid}.about-media[data-astro-cid-ta2fbyqs]{aspect-ratio:3/4;border-radius:16px;box-shadow:0 20px 40px #0000001a}.about-text[data-astro-cid-ta2fbyqs] .kicker[data-astro-cid-ta2fbyqs]{color:var(--flag-red);letter-spacing:.1em;margin-bottom:12px;font-weight:700}.about-text[data-astro-cid-ta2fbyqs] h1[data-astro-cid-ta2fbyqs]{color:var(--ink);margin-bottom:24px;font-size:clamp(36px,5vw,56px);font-weight:600}.about-text[data-astro-cid-ta2fbyqs] p[data-astro-cid-ta2fbyqs]{color:var(--muted);margin-bottom:20px;font-size:17px;line-height:1.8}.about-text[data-astro-cid-ta2fbyqs] .lead[data-astro-cid-ta2fbyqs]{color:var(--ink);font-size:20px;font-weight:500;line-height:1.6}.about-text[data-astro-cid-ta2fbyqs] .btn[data-astro-cid-ta2fbyqs]{margin-top:16px}@media (width<=768px){.about-inner[data-astro-cid-ta2fbyqs]{grid-template-columns:1fr;gap:40px}.about-media[data-astro-cid-ta2fbyqs]{aspect-ratio:1;max-width:400px;margin:0 auto}}\n"}],"routeData":{"route":"/about","isIndex":false,"type":"page","pattern":"^\\/about\\/?$","segments":[[{"content":"about","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/about.astro","pathname":"/about","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"type":"endpoint","isIndex":false,"route":"/api/keystatic/[...params]","pattern":"^\\/api\\/keystatic(?:\\/(.*?))?\\/?$","segments":[[{"content":"api","dynamic":false,"spread":false}],[{"content":"keystatic","dynamic":false,"spread":false}],[{"content":"...params","dynamic":true,"spread":true}]],"params":["...params"],"component":"node_modules/@keystatic/astro/internal/keystatic-api.js","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"external","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/blog","isIndex":true,"type":"page","pattern":"^\\/blog\\/?$","segments":[[{"content":"blog","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/blog/index.astro","pathname":"/blog","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/Layout.DaqdDlO4.css"},{"type":"inline","content":".book-detail[data-astro-cid-htmgan3m]{max-width:1000px;margin:0 auto;padding-block:80px 100px}.book-layout[data-astro-cid-htmgan3m]{grid-template-columns:300px 1fr;align-items:start;gap:48px;display:grid}.cover-wrap[data-astro-cid-htmgan3m]{border-radius:8px;overflow:hidden;box-shadow:0 20px 40px #00000026}.cover-wrap[data-astro-cid-htmgan3m] img[data-astro-cid-htmgan3m]{width:100%;height:auto;display:block}.kicker[data-astro-cid-htmgan3m]{color:var(--flag-red);letter-spacing:.1em;margin-bottom:12px;font-weight:700}h1[data-astro-cid-htmgan3m]{color:var(--ink);margin-bottom:20px;font-size:clamp(28px,4vw,44px);font-weight:600}.blurb[data-astro-cid-htmgan3m]{color:var(--muted);margin-bottom:24px;font-size:18px;line-height:1.7}.extra-content[data-astro-cid-htmgan3m]{margin-top:40px;font-size:16px;line-height:1.7}@media (width<=768px){.book-layout[data-astro-cid-htmgan3m]{grid-template-columns:1fr}.cover-wrap[data-astro-cid-htmgan3m]{max-width:260px;margin:0 auto}}\n"}],"routeData":{"route":"/books/[slug]","isIndex":false,"type":"page","pattern":"^\\/books\\/([^/]+?)\\/?$","segments":[[{"content":"books","dynamic":false,"spread":false}],[{"content":"slug","dynamic":true,"spread":false}]],"params":["slug"],"component":"src/pages/books/[slug].astro","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/Layout.DaqdDlO4.css"},{"type":"inline","content":".header[data-astro-cid-4ojkswfr]{text-align:center;border-bottom:1px solid #e5e7eb;padding-block:80px 40px}.header[data-astro-cid-4ojkswfr] .kicker[data-astro-cid-4ojkswfr]{color:var(--flag-red);letter-spacing:.1em;margin-bottom:12px;font-weight:700}.header[data-astro-cid-4ojkswfr] h1[data-astro-cid-4ojkswfr]{color:var(--ink);font-size:clamp(32px,5vw,48px);font-weight:600}.header[data-astro-cid-4ojkswfr] .sub[data-astro-cid-4ojkswfr]{color:var(--muted);font-size:18px}.grid-section[data-astro-cid-4ojkswfr]{padding-block:60px 100px}.book-grid[data-astro-cid-4ojkswfr]{grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:32px;max-width:1100px;margin:0 auto;display:grid}.book-card[data-astro-cid-4ojkswfr]{flex-direction:column;text-decoration:none;transition:transform .2s;display:flex}.book-card[data-astro-cid-4ojkswfr]:hover{transform:translateY(-4px)}.book-cover[data-astro-cid-4ojkswfr]{aspect-ratio:2/3;background:#f3f4f6;border-radius:8px;margin-bottom:16px;overflow:hidden;box-shadow:0 10px 24px #0000001a}.book-cover[data-astro-cid-4ojkswfr] img[data-astro-cid-4ojkswfr]{object-fit:cover;width:100%;height:100%}.book-info[data-astro-cid-4ojkswfr] h2[data-astro-cid-4ojkswfr]{color:var(--ink);margin-bottom:8px;font-size:20px;font-weight:600}.book-info[data-astro-cid-4ojkswfr] .blurb[data-astro-cid-4ojkswfr]{color:var(--muted);margin-bottom:12px;font-size:14px;line-height:1.6}.read-more[data-astro-cid-4ojkswfr]{color:var(--flag-blue);font-size:14px;font-weight:600}\n"}],"routeData":{"route":"/books","isIndex":true,"type":"page","pattern":"^\\/books\\/?$","segments":[[{"content":"books","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/books/index.astro","pathname":"/books","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/Layout.DaqdDlO4.css"},{"type":"inline","content":".header[data-astro-cid-4fv6cgsg]{text-align:center;border-bottom:1px solid #e5e7eb;padding-block:80px 40px}.header[data-astro-cid-4fv6cgsg] .kicker[data-astro-cid-4fv6cgsg]{color:var(--flag-red);letter-spacing:.1em;margin-bottom:12px;font-weight:700}.header[data-astro-cid-4fv6cgsg] h1[data-astro-cid-4fv6cgsg]{color:var(--ink);font-size:clamp(32px,5vw,48px);font-weight:600}.header[data-astro-cid-4fv6cgsg] .sub[data-astro-cid-4fv6cgsg]{color:var(--muted);font-size:18px}.grid-section[data-astro-cid-4fv6cgsg]{max-width:1000px;margin:0 auto;padding-block:60px 100px}.cat-grid[data-astro-cid-4fv6cgsg]{grid-template-columns:repeat(3,1fr);gap:24px;display:grid}.cat-card[data-astro-cid-4fv6cgsg]{border-radius:16px;flex-direction:column;justify-content:flex-end;min-height:200px;padding:24px;text-decoration:none;transition:transform .15s;display:flex}.cat-card[data-astro-cid-4fv6cgsg]:hover{transform:translateY(-4px)}.cat-card[data-astro-cid-4fv6cgsg] span[data-astro-cid-4fv6cgsg]{color:#fff;font-size:22px;font-weight:700}.cat-card[data-astro-cid-4fv6cgsg] small[data-astro-cid-4fv6cgsg]{opacity:.9;color:#fff;margin-top:6px;font-size:14px}@media (width<=768px){.cat-grid[data-astro-cid-4fv6cgsg]{grid-template-columns:1fr}}\n"}],"routeData":{"route":"/categories","isIndex":true,"type":"page","pattern":"^\\/categories\\/?$","segments":[[{"content":"categories","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/categories/index.astro","pathname":"/categories","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/Layout.DaqdDlO4.css"},{"type":"inline","content":".contact-section[data-astro-cid-6bfsojfh]{padding-block:100px 120px}.contact-inner[data-astro-cid-6bfsojfh]{grid-template-columns:1fr 1fr;align-items:start;gap:60px;max-width:1000px;margin:0 auto;display:grid}.contact-text[data-astro-cid-6bfsojfh] .kicker[data-astro-cid-6bfsojfh]{color:var(--flag-red);letter-spacing:.1em;margin-bottom:12px;font-weight:700}.contact-text[data-astro-cid-6bfsojfh] h1[data-astro-cid-6bfsojfh]{color:var(--ink);margin-bottom:20px;font-size:clamp(36px,5vw,48px);font-weight:600}.contact-text[data-astro-cid-6bfsojfh] .lead[data-astro-cid-6bfsojfh]{color:var(--muted);margin-bottom:32px;font-size:18px;line-height:1.7}.contact-details[data-astro-cid-6bfsojfh] p[data-astro-cid-6bfsojfh]{color:var(--ink);margin-bottom:12px;font-size:15px}.contact-details[data-astro-cid-6bfsojfh] a[data-astro-cid-6bfsojfh]{color:var(--flag-blue);text-decoration:underline}.contact-form-wrapper[data-astro-cid-6bfsojfh]{background:#f9fafb;border:1px solid #e5e7eb;border-radius:16px;padding:40px}.form-group[data-astro-cid-6bfsojfh]{margin-bottom:20px}.form-group[data-astro-cid-6bfsojfh] label[data-astro-cid-6bfsojfh]{color:var(--ink);margin-bottom:8px;font-size:14px;font-weight:600;display:block}.form-group[data-astro-cid-6bfsojfh] input[data-astro-cid-6bfsojfh],.form-group[data-astro-cid-6bfsojfh] textarea[data-astro-cid-6bfsojfh]{background:#fff;border:1px solid #d1d5db;border-radius:8px;outline:none;width:100%;padding:12px 16px;font-family:inherit;font-size:15px;transition:border-color .2s}.form-group[data-astro-cid-6bfsojfh] input[data-astro-cid-6bfsojfh]:focus,.form-group[data-astro-cid-6bfsojfh] textarea[data-astro-cid-6bfsojfh]:focus{border-color:var(--flag-blue)}.contact-form[data-astro-cid-6bfsojfh] .btn[data-astro-cid-6bfsojfh]{width:100%;margin-top:8px}@media (width<=768px){.contact-inner[data-astro-cid-6bfsojfh]{grid-template-columns:1fr;gap:40px}.contact-form-wrapper[data-astro-cid-6bfsojfh]{padding:24px}}\n"}],"routeData":{"route":"/contact","isIndex":false,"type":"page","pattern":"^\\/contact\\/?$","segments":[[{"content":"contact","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/contact.astro","pathname":"/contact","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"type":"page","isIndex":false,"route":"/keystatic/[...params]","pattern":"^\\/keystatic(?:\\/(.*?))?\\/?$","segments":[[{"content":"keystatic","dynamic":false,"spread":false}],[{"content":"...params","dynamic":true,"spread":true}]],"params":["...params"],"component":"node_modules/@keystatic/astro/internal/keystatic-astro-page.astro","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"external","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/posts/[slug]","isIndex":false,"type":"page","pattern":"^\\/posts\\/([^/]+?)\\/?$","segments":[[{"content":"posts","dynamic":false,"spread":false}],[{"content":"slug","dynamic":true,"spread":false}]],"params":["slug"],"component":"src/pages/posts/[slug].astro","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/Layout.DaqdDlO4.css"},{"type":"inline","content":".detail[data-astro-cid-c5f4emaj]{max-width:760px;margin:0 auto;padding-block:80px 100px}.kicker[data-astro-cid-c5f4emaj]{color:var(--flag-red);letter-spacing:.1em;margin-bottom:12px;font-weight:700}h1[data-astro-cid-c5f4emaj]{color:var(--ink);margin-bottom:32px;font-size:clamp(28px,4vw,44px);font-weight:600}.summary-box[data-astro-cid-c5f4emaj]{background:#f9fafb;border:1px solid #e5e7eb;border-radius:12px;margin-bottom:40px;padding:28px}.summary-box[data-astro-cid-c5f4emaj] h2[data-astro-cid-c5f4emaj]{color:var(--ink);margin-bottom:12px;font-size:18px;font-weight:600}.summary-box[data-astro-cid-c5f4emaj] p[data-astro-cid-c5f4emaj]{color:var(--muted);margin-bottom:20px;font-size:16px;line-height:1.7}.extra-content[data-astro-cid-c5f4emaj]{color:var(--ink);font-size:16px;line-height:1.7}\n"}],"routeData":{"route":"/research/[slug]","isIndex":false,"type":"page","pattern":"^\\/research\\/([^/]+?)\\/?$","segments":[[{"content":"research","dynamic":false,"spread":false}],[{"content":"slug","dynamic":true,"spread":false}]],"params":["slug"],"component":"src/pages/research/[slug].astro","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[{"type":"external","src":"_astro/Layout.DaqdDlO4.css"},{"type":"inline","content":".header[data-astro-cid-4sbzrcyf]{text-align:center;border-bottom:1px solid #e5e7eb;padding-block:80px 40px}.header[data-astro-cid-4sbzrcyf] .kicker[data-astro-cid-4sbzrcyf]{color:var(--flag-red);letter-spacing:.1em;margin-bottom:12px;font-weight:700}.header[data-astro-cid-4sbzrcyf] h1[data-astro-cid-4sbzrcyf]{color:var(--ink);font-size:clamp(32px,5vw,48px);font-weight:600}.header[data-astro-cid-4sbzrcyf] .sub[data-astro-cid-4sbzrcyf]{color:var(--muted);font-size:18px}.list[data-astro-cid-4sbzrcyf]{flex-direction:column;gap:24px;max-width:900px;margin:0 auto;padding-block:60px 100px;display:flex}.paper-card[data-astro-cid-4sbzrcyf]{border:1px solid #e5e7eb;border-radius:12px;grid-template-columns:160px 1fr;gap:24px;padding:24px;text-decoration:none;transition:box-shadow .2s;display:grid}.paper-card[data-astro-cid-4sbzrcyf]:hover{box-shadow:0 10px 24px #00000014}.paper-thumb[data-astro-cid-4sbzrcyf]{aspect-ratio:4/3;background:#f3f4f6;border-radius:8px;overflow:hidden}.paper-thumb[data-astro-cid-4sbzrcyf] img[data-astro-cid-4sbzrcyf]{object-fit:cover;width:100%;height:100%}.paper-info[data-astro-cid-4sbzrcyf] h2[data-astro-cid-4sbzrcyf]{color:var(--ink);margin-bottom:8px;font-size:20px;font-weight:600}.paper-info[data-astro-cid-4sbzrcyf] .summary[data-astro-cid-4sbzrcyf]{color:var(--muted);margin-bottom:12px;font-size:14px;line-height:1.6}.read-more[data-astro-cid-4sbzrcyf]{color:var(--flag-blue);font-size:14px;font-weight:600}@media (width<=640px){.paper-card[data-astro-cid-4sbzrcyf]{grid-template-columns:1fr}}\n"}],"routeData":{"route":"/research","isIndex":true,"type":"page","pattern":"^\\/research\\/?$","segments":[[{"content":"research","dynamic":false,"spread":false}]],"params":[],"component":"src/pages/research/index.astro","pathname":"/research","prerender":false,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}},{"file":"","links":[],"scripts":[],"styles":[],"routeData":{"route":"/","isIndex":true,"type":"page","pattern":"^\\/$","segments":[],"params":[],"component":"src/pages/index.astro","pathname":"/","prerender":true,"fallbackRoutes":[],"distURL":[],"origin":"project","_meta":{"trailingSlash":"ignore"}}}],"serverLike":true,"middlewareMode":"classic","base":"/","trailingSlash":"ignore","compressHTML":"jsx","componentMetadata":[["C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/blog/index.astro",{"propagation":"none","containsHead":true}],["C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/index.astro",{"propagation":"none","containsHead":true}],["C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/posts/[slug].astro",{"propagation":"none","containsHead":true}],["C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/404.astro",{"propagation":"none","containsHead":true}],["C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/about.astro",{"propagation":"none","containsHead":true}],["C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/books/[slug].astro",{"propagation":"none","containsHead":true}],["C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/books/index.astro",{"propagation":"none","containsHead":true}],["C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/categories/index.astro",{"propagation":"none","containsHead":true}],["C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/contact.astro",{"propagation":"none","containsHead":true}],["C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/research/[slug].astro",{"propagation":"none","containsHead":true}],["C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/research/index.astro",{"propagation":"none","containsHead":true}]],"renderers":[],"clientDirectives":[["idle","(function(){let e=(e,t)=>{let n=async()=>{await(await e())()},r=typeof t.value==`object`?t.value:void 0,i={timeout:r==null?void 0:r.timeout};`requestIdleCallback`in window?window.requestIdleCallback(n,i):setTimeout(n,i.timeout||200)};(self.Astro||(self.Astro={})).idle=e,window.dispatchEvent(new Event(`astro:idle`))})();"],["load","(function(){let e=async e=>{await(await e())()};(self.Astro||(self.Astro={})).load=e,window.dispatchEvent(new Event(`astro:load`))})();"],["media","(function(){let e=(e,t)=>{let n=async()=>{await(await e())()};if(t.value){let e=matchMedia(t.value);e.matches?n():e.addEventListener(`change`,n,{once:!0})}};(self.Astro||(self.Astro={})).media=e,window.dispatchEvent(new Event(`astro:media`))})();"],["only","(function(){let e=async e=>{await(await e())()};(self.Astro||(self.Astro={})).only=e,window.dispatchEvent(new Event(`astro:only`))})();"],["visible","(function(){let e=(e,t,n)=>{let r=async()=>{await(await e())()},i=typeof t.value==`object`?t.value:void 0,a={rootMargin:i==null?void 0:i.rootMargin},o=new IntersectionObserver(e=>{for(let t of e)if(t.isIntersecting){o.disconnect(),r();break}},a);for(let e of n.children)o.observe(e)};(self.Astro||(self.Astro={})).visible=e,window.dispatchEvent(new Event(`astro:visible`))})();"]],"entryModules":{"\u0000astro:data-layer-content":"chunks/_astro_data-layer-content_BmbQOl12.mjs","\u0000noop-middleware":"virtual_astro_middleware.mjs","\u0000virtual:astro:get-image":"chunks/_virtual_astro_get-image_CHs5o6YM.mjs","\u0000virtual:astro:server-island-manifest":"chunks/_virtual_astro_server-island-manifest_BhTW5IeR.mjs","\u0000virtual:astro:session-driver":"chunks/_virtual_astro_session-driver_HzKX7Wn1.mjs","C:\\projects\\BettyWakiaBlog\\bettywakiablog\\.astro\\content-assets.mjs":"chunks/content-assets_CLeMUEVR.mjs","C:\\projects\\BettyWakiaBlog\\bettywakiablog\\.astro\\content-modules.mjs":"chunks/content-modules_DYcV8QGo.mjs","\u0000virtual:astro:actions/noop-entrypoint":"chunks/noop-entrypoint_CxXy0p4B.mjs","C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/astro/dist/assets/services/sharp.js":"chunks/sharp_bN2G9vV4.mjs","C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/@astrojs/react/dist/vnode-children.js":"chunks/vnode-children_C4hxNQje.mjs","@astrojs/node/server.js":"entry.mjs","\u0000virtual:astro:page:src/pages/404@_@astro":"chunks/404_Gro7TOh7.mjs","\u0000virtual:astro:page:src/pages/research/[slug]@_@astro":"chunks/_slug__B-bTM33I.mjs","\u0000virtual:astro:page:src/pages/books/[slug]@_@astro":"chunks/_slug__Ca9u2piu.mjs","\u0000virtual:astro:page:src/pages/about@_@astro":"chunks/about_BeegldHr.mjs","\u0000virtual:astro:page:src/pages/contact@_@astro":"chunks/contact_D8sUj07C.mjs","\u0000virtual:astro:page:src/pages/books/index@_@astro":"chunks/index_BqmcKPqg.mjs","\u0000virtual:astro:page:src/pages/research/index@_@astro":"chunks/index_C-F_2TFo.mjs","\u0000virtual:astro:page:src/pages/categories/index@_@astro":"chunks/index_CitKdrvx.mjs","\u0000virtual:astro:page:node_modules/@keystatic/astro/internal/keystatic-api@_@js":"chunks/keystatic-api_DcNZbPF-.mjs","\u0000virtual:astro:page:node_modules/@keystatic/astro/internal/keystatic-astro-page@_@astro":"chunks/keystatic-astro-page_DV9ZcnKc.mjs","\u0000virtual:astro:page:node_modules/astro/dist/assets/endpoint/node@_@js":"chunks/node_B8viEXAp.mjs","@astrojs/react/client.js":"_astro/client.Dz3MrANJ.js","C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/blog/index.astro?astro&type=script&index=0&lang.ts":"_astro/index.astro_astro_type_script_index_0_lang.DhwtPk1r.js","C:/projects/BettyWakiaBlog/bettywakiablog/node_modules/@keystatic/astro/internal/keystatic-page.js":"_astro/keystatic-page.JMInqNHd.js","astro:scripts/before-hydration.js":""},"inlinedScripts":[["C:/projects/BettyWakiaBlog/bettywakiablog/src/pages/blog/index.astro?astro&type=script&index=0&lang.ts","document.addEventListener(`DOMContentLoaded`,()=>{let e=document.getElementById(`search-input`),t=document.getElementById(`post-grid`),n=document.getElementById(`no-results`);if(!e||!t)return;let r=Array.from(t.querySelectorAll(`.post-card`));e.addEventListener(`input`,e=>{let t=e.target.value.toLowerCase().trim(),i=0;r.forEach(e=>{let n=e.dataset.title||``,r=e.dataset.desc||``,a=e.dataset.cat||``;n.includes(t)||r.includes(t)||a.includes(t)?(e.style.display=`block`,i++):e.style.display=`none`}),n&&(n.style.display=i===0?`block`:`none`)})});"]],"assets":["/_astro/Layout.DaqdDlO4.css","/_astro/client.Dz3MrANJ.js","/_astro/keystatic-page.JMInqNHd.js","/_astro/react-dom.DVHG2hom.js","/blog/index.html","/favicon.svg","/images/articles/the-architect-behind-the-words/cover.jpg","/images/posts/building-betty-wakia-s-digital-home-a-blog-by-rebbie-afuyaso-at-wuhan-university-of-technology/cover.jpg","/index.html"],"buildFormat":"directory","checkOrigin":true,"actionBodySizeLimit":1048576,"serverIslandBodySizeLimit":1048576,"allowedDomains":[],"key":"W6zmaSv90im9Pq/EFxEW5RZ19HEOFSd5MgO3FztrkAw=","sessionConfig":{"driver":"unstorage/drivers/fs-lite","options":{"base":"C:\\projects\\BettyWakiaBlog\\bettywakiablog\\node_modules\\.astro\\sessions"}},"image":{},"devToolbar":{"enabled":false,"debugInfoOutput":""},"logLevel":"info","shouldInjectCspMetaTags":false});
 var manifestRoutes = _manifest.routes;
 var manifest = Object.assign(_manifest, {
 	renderers,
@@ -1107,14 +1331,6 @@ var RedirectSinglePageBuiltModule = {
 	page: () => Promise.resolve(RedirectComponentInstance),
 	onRequest: (_, next) => next()
 };
-// node_modules/astro/dist/assets/utils/getAssetsPrefix.js
-function getAssetsPrefix(fileExtension, assetsPrefix) {
-	let prefix = "";
-	if (!assetsPrefix) prefix = "";
-	else if (typeof assetsPrefix === "string") prefix = assetsPrefix;
-	else prefix = assetsPrefix[fileExtension.slice(1)] || assetsPrefix.fallback;
-	return prefix;
-}
 // node_modules/astro/dist/core/render/ssr-element.js
 var URL_PARSE_BASE = "https://astro.build";
 function splitAssetPath(path) {

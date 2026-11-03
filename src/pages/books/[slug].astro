@@ -1,0 +1,53 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const books = await getCollection('books');
+  return books.map((book) => ({ params: { slug: book.id } }));
+}
+
+const { slug } = Astro.params;
+const book = await getEntry('books', slug!);
+if (!book) throw new Error('Book not found');
+const { Content } = await render(book);
+---
+
+<Layout title={`${book.data.title} | BettyWakiaBlog`} description={book.data.blurb} activePage="categories">
+  <article class="book-detail gutter">
+    <div class="book-layout">
+      {book.data.cover && (
+        <div class="cover-wrap">
+          <img src={book.data.cover} alt={book.data.title} />
+        </div>
+      )}
+      <div class="info">
+        <p class="kicker">BOOK</p>
+        <h1>{book.data.title}</h1>
+        <p class="blurb">{book.data.blurb}</p>
+        {book.data.purchaseUrl && (
+          <a href={book.data.purchaseUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+            Get the Book →
+          </a>
+        )}
+        {book.body && (
+          <div class="extra-content">
+            <Content />
+          </div>
+        )}
+      </div>
+    </div>
+  </article>
+</Layout>
+
+<style>
+  .book-detail { padding-block: 80px 100px; max-width: 1000px; margin: 0 auto; }
+  .book-layout { display: grid; grid-template-columns: 300px 1fr; gap: 48px; align-items: start; }
+  .cover-wrap { border-radius: 8px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+  .cover-wrap img { width: 100%; height: auto; display: block; }
+  .kicker { color: var(--flag-red); font-weight: 700; letter-spacing: 0.1em; margin-bottom: 12px; }
+  h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 600; color: var(--ink); margin-bottom: 20px; }
+  .blurb { font-size: 18px; line-height: 1.7; color: var(--muted); margin-bottom: 24px; }
+  .extra-content { margin-top: 40px; font-size: 16px; line-height: 1.7; }
+  @media (max-width: 768px) { .book-layout { grid-template-columns: 1fr; } .cover-wrap { max-width: 260px; margin: 0 auto; } }
+</style>

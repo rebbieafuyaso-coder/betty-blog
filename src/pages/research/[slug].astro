@@ -1,0 +1,45 @@
+---
+import { getCollection, getEntry, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const papers = await getCollection('research');
+  return papers.map((paper) => ({ params: { slug: paper.id } }));
+}
+
+const { slug } = Astro.params;
+const paper = await getEntry('research', slug!);
+if (!paper) throw new Error('Paper not found');
+const { Content } = await render(paper);
+---
+
+<Layout title={`${paper.data.title} | Research`} description={paper.data.summary} activePage="categories">
+  <article class="detail gutter">
+    <p class="kicker">RESEARCH PUBLICATION</p>
+    <h1>{paper.data.title}</h1>
+    <div class="summary-box">
+      <h2>Summary</h2>
+      <p>{paper.data.summary}</p>
+      {paper.data.downloadUrl && (
+        <a href={paper.data.downloadUrl} target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          Download Paper →
+        </a>
+      )}
+    </div>
+    {paper.body && (
+      <div class="extra-content">
+        <Content />
+      </div>
+    )}
+  </article>
+</Layout>
+
+<style>
+  .detail { padding-block: 80px 100px; max-width: 760px; margin: 0 auto; }
+  .kicker { color: var(--flag-red); font-weight: 700; letter-spacing: 0.1em; margin-bottom: 12px; }
+  h1 { font-size: clamp(28px, 4vw, 44px); font-weight: 600; color: var(--ink); margin-bottom: 32px; }
+  .summary-box { background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 28px; margin-bottom: 40px; }
+  .summary-box h2 { font-size: 18px; font-weight: 600; margin-bottom: 12px; color: var(--ink); }
+  .summary-box p { font-size: 16px; line-height: 1.7; color: var(--muted); margin-bottom: 20px; }
+  .extra-content { font-size: 16px; line-height: 1.7; color: var(--ink); }
+</style>

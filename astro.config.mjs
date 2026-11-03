@@ -9,4 +9,5 @@ export default defineConfig({
   output: 'server',
   adapter: node({ mode: 'standalone' }),
   integrations: [react(), markdoc(), keystatic()],
+  site: 'https://bettywakiablog.com',
 });
