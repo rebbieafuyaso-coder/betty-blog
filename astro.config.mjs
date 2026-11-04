@@ -9,5 +9,5 @@ export default defineConfig({
   output: 'static',
   //adapter: node({ mode: 'standalone' }),
   integrations: [react(), markdoc(), keystatic()],
-  site: 'https://bettywakiablog.com',
+  site: 'https://bettywakiablog.com'
 });
