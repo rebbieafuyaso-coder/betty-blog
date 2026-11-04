@@ -2,6 +2,8 @@
 import { getCollection, getEntry, render } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
+export const prerender = true;
+
 export async function getStaticPaths() {
   const papers = await getCollection('research');
   return papers.map((paper) => ({ params: { slug: paper.id } }));
