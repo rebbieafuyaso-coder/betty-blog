@@ -9,7 +9,8 @@ import Layout from '../layouts/Layout.astro';
 >
   <section class="about-hero gutter">
     <div class="about-inner">
-      <div class="about-media grad"></div>
+      <div class="about-media">
+      </div>
       <div class="about-text">
         <p class="kicker">ABOUT THE AUTHOR</p>
         <h1>Betty Wakia</h1>
@@ -47,6 +48,7 @@ import Layout from '../layouts/Layout.astro';
     aspect-ratio: 3 / 4; 
     border-radius: 16px; 
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    background: url("/Betty-wakia.jpg");
   }
   .about-text .kicker { color: var(--flag-red); margin-bottom: 12px; font-weight: 700; letter-spacing: 0.1em; }
   .about-text h1 { font-size: clamp(36px, 5vw, 56px); font-weight: 600; margin-bottom: 24px; color: var(--ink); }

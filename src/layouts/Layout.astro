@@ -76,7 +76,7 @@ const canonicalURL = new URL(Astro.url.pathname, DOMAIN);
     <div class="banner">STORIES · IDEAS · BOOKS — BETTYWAKIABLOG</div>
     <header class="site-header">
       <div class="header-inner">
-        <a href="/" class="brand"><span class="brand-mark grad"></span>{BRAND_NAME}</a>
+        <a href="/" class="brand">{BRAND_NAME}</a>
 
         <input type="checkbox" id="nav-toggle" class="nav-toggle-input" />
         <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation">
@@ -105,7 +105,11 @@ const canonicalURL = new URL(Astro.url.pathname, DOMAIN);
           <p>Privacy Policy</p>
           <p>Accessibility Statement</p>
         </div>
-        <div></div>
+        <div>
+          <p class="footer-head">DEVELOPER</p>
+          <p>About Developer</p>
+          <p>Contact Developer</p>
+        </div>
         <div>
           <p class="footer-head">FOLLOW</p>
           <div class="socials">
