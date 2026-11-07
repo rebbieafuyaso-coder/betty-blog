@@ -1,9 +1,0 @@
-{
-  "name": "bettywakiablog",
-  "main": "@astrojs/cloudflare/entrypoints/server",
-  "compatibility_date": "2026-11-08",
-  "assets": {
-    "directory": "./dist",
-    "binding": "ASSETS"
-  }
-}
